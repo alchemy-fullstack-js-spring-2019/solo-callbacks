@@ -1,5 +1,5 @@
 const fs = require('fs');
-const { readJSON } = require('../lib/jsonFs');
+const { readJSON, writeJSON } = require('../lib/jsonFs');
 
 const sampleJSON = {
     'glossary': {
@@ -24,17 +24,23 @@ const sampleJSON = {
     }
 };
 
-
 describe('readJSON tests', () => {
-    afterEach(() => {
-        fs.unlink('json-string.txt', () => {});
+    afterEach(done => {
+        fs.unlink('myJSON.txt', done);
     });
-    it('better work', done => {
+    it('reads JSON from file', done => {
         const stringified = JSON.stringify(sampleJSON);
-        fs.writeFile('json-string.txt', stringified, err => {
-            if(err) throw err;
-            const result = readJSON('json-string.txt', (err, result) => {
-                if(err) throw err;
+        fs.writeFile('myJSON.txt', stringified, () => {
+            readJSON('myJSON.txt', (err, result) => {
+                expect(err).toBeFalsy();
+                expect(result).toEqual(sampleJSON);
+                done();
+            });
+        });
+    });
+    it('writes JSON to file', done => {
+        writeJSON('myJSON.txt', sampleJSON, () => {
+            readJSON('myJSON.txt', (err, result) => {
                 expect(result).toEqual(sampleJSON);
                 done();
             });
