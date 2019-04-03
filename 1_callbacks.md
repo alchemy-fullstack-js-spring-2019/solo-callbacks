@@ -25,7 +25,6 @@ callback.
 Let's start making our own functions that work asynchronously.
 To do this, our functions will need to take a callback and
 invoke that callback.
-
 ## setTimeout
 
 * use `setTimeout` to fire a callback in 2 seconds
