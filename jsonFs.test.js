@@ -18,7 +18,7 @@ describe('read JSON', () => {
 
 describe('write JSON', () => {
   test('writes JSON string to a file', (done) => {
-    const object = { stuff: 'stuff stuff stuff' };
+    const object = { stuff: 'MOAR STUFFS' };
     writeJSON('jsonTest.txt', object, (err) => {
       if(err) throw err;
       readJSON('jsonTest.txt', (err, data) => {
