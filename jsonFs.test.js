@@ -7,8 +7,9 @@ describe('read JSON', () => {
     const jsonString = JSON.stringify({ stuff: 'stuff stuff stuff' });
     fs.writeFile('jsonTest.txt', jsonString, (err) => {
       if(err) throw err;
-      readJSON('jsonTest.txt', (data) => {
-        expect(data).toEqual(jsonString);   
+      readJSON('jsonTest.txt', (err, data) => {
+        if(err) throw err;
+        expect(data).toEqual(JSON.parse(jsonString));   
         done();
       }); 
     });  
@@ -17,11 +18,12 @@ describe('read JSON', () => {
 
 describe('write JSON', () => {
   test('writes JSON string to a file', (done) => {
-    const jsonString = JSON.stringify({ stuff: 'stuff stuff stuff' });
-    fs.writeFile('jsonTest.txt', jsonString, (err) => {
+    const object = { stuff: 'stuff stuff stuff' };
+    writeJSON('jsonTest.txt', object, (err) => {
       if(err) throw err;
-      readJSON('jsonTest.txt', (data) => {
-        expect(data).toEqual(jsonString);   
+      readJSON('jsonTest.txt', (err, data) => {
+        if(err) throw err;
+        expect(data).toEqual(object);   
         done();
       }); 
     });  
