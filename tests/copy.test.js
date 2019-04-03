@@ -3,8 +3,13 @@ const fs = require('fs');
 const { readFile } = require('../lib/readFile.js');
 
 describe('copy function', () => {
+    beforeEach(() => {
+        fs.unlink('../writing3.txt', (err) => {
+            if(err) throw err;
+        });
+    });
     it('copies a file and invokes a callback', done => {
-        copy('../writing.txt', '../writing3.txt', err => {
+        copy('../writing.txt', '../writing3.txt', (err) => {
             expect(err).toBeFalsy();
         });
         fs.readFile('../writing3.txt', 'utf8', (err, data) => {
