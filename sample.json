@@ -1,0 +1,11 @@
+{
+    "name": "solo-callbacks",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+      "test": "jest --verbose",
+      "test:watch": "npm run test -- --watch",
+      "start": "node lib/index.js"
+    }
+}
