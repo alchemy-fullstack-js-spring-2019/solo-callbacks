@@ -1,0 +1,26 @@
+{
+  "name": "solo-callbacks",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {},
+  "devDependencies": {
+    "jest": "^24.7.0"
+  },
+  "scripts": {
+    "test": "jest --verbose",
+    "test:watch": "npm run test -- --watch",
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/intromode/solo-callbacks.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/intromode/solo-callbacks/issues"
+  },
+  "homepage": "https://github.com/intromode/solo-callbacks#readme"
+}
