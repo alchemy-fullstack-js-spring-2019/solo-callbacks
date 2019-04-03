@@ -1,8 +1,7 @@
 const wait = require('../lib/wait');
 
-describe('callbacks', () => {
+describe('wait function', () => {
     it('waits one second and invokes a callback', done => {
-        wait(2000);
-        done();
+        wait(1000, () => done());      
     });
 });
