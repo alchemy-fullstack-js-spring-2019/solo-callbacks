@@ -2,9 +2,9 @@ const fs = require('fs');
 
 function readJSON(src, callback){
   fs.readFile(src, 'utf8', (err, data) => {
-    if(err) throw err;
+    if(err) return callback(err);
     let parsed = JSON.parse(data);
-    callback(err, parsed);
+    callback(null, parsed);
   });
 }
 
