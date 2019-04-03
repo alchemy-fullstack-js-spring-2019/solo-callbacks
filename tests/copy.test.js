@@ -10,10 +10,11 @@ describe('copy function', () => {
   it('copies a file', done => {
     copy('./newFile.js', './oneMoreFile.txt', err => {
       expect(err).toBeFalsy();
-      fs.readFile('./oneMoreFile.txt', 'utf8', (err, data) => {
-        expect(err).toBeFalsy();
-        expect(data).toBe('Hi');
-        done();
+      fs.readFile('./newFile.js', 'utf8', (err, originalData) => {
+        fs.readFile('./oneMoreFile.txt', 'utf8', (err, copiedData) => {
+          expect(originalData).toBe(copiedData);
+          done();
+        });
       });
     });
   });
