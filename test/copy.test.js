@@ -9,25 +9,21 @@ describe('Copy file function test', () => {
   
     copy(src, dst, err => {
       if(err) throw err;
-      
-      expect(fs.readFile(dst, { encoding: 'utf8' }, (err, data) => {
+      expect(err).toBeFalsy();
+      fs.readFile(dst, { encoding: 'utf8' }, (err, orig) => {
         if(err) throw err;
-        return data;
-      })).toEqual(fs.readFile(src, { encoding: 'utf8' }, (err, data) => {
-        if(err) throw err;
-        return data;
-      }));
-
-      done();
+        fs.readFile(src, { encoding: 'utf8' }, (err, copy) => {
+          if(err) throw err;
+          expect(orig).toEqual(copy);
+          done();
+        });
+      });
     });
 
   });
 
-  afterEach(() => {
-    fs.unlink(dst, err => {
-      if(err) throw err;
-      // console.log(`${dst} was deleted`);
-    });
+  afterEach(done => {
+    fs.unlink(dst, done);
   });
 
 });
