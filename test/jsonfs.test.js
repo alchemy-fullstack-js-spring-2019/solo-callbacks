@@ -8,7 +8,7 @@ describe('json', () => {
     const json = JSON.stringify({ name: 'Timmothy', age: 23 });
     fs.writeFile('./json.txt', json, 'utf8', () => {
       readJSON('./json.txt', data => {
-        expect(data).toEqual({ name: 'Timmothy', age: 23 });
+        expect(data).toEqual(json);
         done();
       });
     });
