@@ -6,7 +6,8 @@
   "scripts": {
     "test": "jest --verbose",
     "test:watch": "npm run test -- --watch",
-    "start": "node lib/index.js"
+    "start": "node lib/index.js",
+    "readfile": "node lib/readFile.js"
   },
   "repository": {
     "type": "git",
