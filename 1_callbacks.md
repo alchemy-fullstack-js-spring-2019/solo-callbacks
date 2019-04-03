@@ -33,6 +33,18 @@ invoke that callback.
 * How would you make this happen after 1 second?
 * How would you make this happen every 1 second continually?
 
+setTimeout(() => {
+  return 'OHHH, calbacks?';
+}, 2000);
+
+setTimeout(() => {
+  return 'OHHH, calbacks?';
+}, 1000);
+
+setInterval(() => {
+  return 'call back call back';
+}, 1000);
+
 ## Wait a bit
 
 `wait` is a function that take a number of milliseconds
@@ -57,3 +69,7 @@ it('waits a bit then invokes callback', done => {
 * create a `wait` function that takes milliseconds to wait
   and a callback to invoke after.
 * use `setTimeout` to invoke callback
+
+wait(1000, () => {
+  
+})
