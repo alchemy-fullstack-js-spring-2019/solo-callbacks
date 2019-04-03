@@ -6,7 +6,7 @@ fs.writeFile('writing.txt', 'I am writing!!!', (err) => {
 
 fs.readFile('writing.txt', { encoding: 'utf8' }, (err, data) => {
   if(err) throw err;
-  console.log(data);
+  return (data);
 });
 
 
