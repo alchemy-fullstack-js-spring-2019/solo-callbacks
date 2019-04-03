@@ -15,7 +15,6 @@ function copyToLocation(readFrom, destination, callBack){
         })
     })
 }
-
 module.exports = copyToLocation;
 
 
