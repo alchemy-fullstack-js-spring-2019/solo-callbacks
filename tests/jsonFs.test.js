@@ -7,7 +7,6 @@ describe('read json function', () => {
             name: 'spot',
             age: 10
         };
-
         fs.writeFile('./myJSON', JSON.stringify(dog), () => {
             readJSON('./myJSON', (err, data) => {
                 expect(err).toBeFalsy();
@@ -16,8 +15,15 @@ describe('read json function', () => {
             })
         });
             
-        //use writeFile to write string to file
-        //read JSON
+    //write file
+    //set up your object again
+    //similar but use writeFile
+    //save it to myJSON
+    
+    //callback - err
+    //readJSON inside writeFile
+    //expect data to equal dog
+    //done
     });
 });
 
