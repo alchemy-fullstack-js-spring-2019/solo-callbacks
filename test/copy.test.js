@@ -14,10 +14,10 @@ describe('copy', () => {
       fs.readFile('./writing.txt', { encoding: 'utf8' }, (err, original) => {
         fs.readFile('./new_writing.txt', { encoding: 'utf8' }, (err, copied) => {
           expect(original).toEqual(copied);
+          done();
         });
       });
     });
-    done();
   });
 });
 
