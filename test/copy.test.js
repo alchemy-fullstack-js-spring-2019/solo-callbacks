@@ -5,7 +5,7 @@ describe('copy a file', () => {
     let src = null;
     let dest = null;
 
-    copy('./1_callbacks.md', './1_callbacks-test.md', err => {
+    copy('./1_callbacks.md', './1_callbacks-copy.md', err => {
       expect(err).toBeFalsy();
 
       expect(copy(src)).toEqual(copy(dest));
