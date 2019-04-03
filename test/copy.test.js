@@ -3,7 +3,7 @@ const fs = require('fs');
 
 describe('copy function', () => {
   afterEach(done => {
-    fs.unlink('./2_fs.md', done);
+    fs.unlink('./2_fs-copy.md', done);
   });
 
   it('can copy a file', done => {
