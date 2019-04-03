@@ -47,7 +47,7 @@ Extract the copy logic into a reusable and testable function.
 
 * create a `copy.test.js` and `copy.js` file
 * write a `copy(src, dst, callback)`
-  function
+  function 
   * src is the path to an existing file
   * dst is the path to put the copied file
   * write a failing test
