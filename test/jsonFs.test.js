@@ -1,4 +1,4 @@
-const readJSON = require('../lib/jsonFs.js');
+const { readJSON, writeJSON } = require('../lib/jsonFs.js');
 const fs = require('fs');
 
 describe('readJSON function', () => {
@@ -16,6 +16,14 @@ describe('readJSON function', () => {
         done();
       });
     });
-    
+  });
+  it('writes a JSON file', done => {
+    writeJSON(src, json, (err) => {
+      expect(err).toBeFalsy();
+      readJSON(src, (err, read) => {
+        expect(read).toEqual(json);
+        done();
+      });
+    });
   });
 });
