@@ -2,10 +2,8 @@ const fs = require('fs');
 const copy = require('../lib/copy.js');
 
 describe('copy function', () => {
-  afterEach(() => {
-    fs.unlink('test/2_fs-copy.md', err => {
-      if(err) throw err;
-    });
+  afterEach(done => {
+    fs.unlink('test/2_fs-copy.md', done);
   });
 
   it('copies a file and places it in specified location', done => {
