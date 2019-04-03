@@ -7,7 +7,8 @@ describe('read a json', () => {
     const json = JSON.stringify(obj);
     fs.writeFile('./jsonTest.txt', json, (err) => {
       if(err) throw err;
-      readJSON('./jsonTest.txt', (data) => {
+      readJSON('./jsonTest.txt', (err, data) => {
+        if(err) throw err;
         expect(data).toEqual(JSON.parse(json));
       });
     });
