@@ -1,12 +1,12 @@
 const fs = require('fs');
 
-function readJSON(src, data, callback){
-  const jsonString = JSON.stringify(data);
-  fs.writeFile(src, jsonString, (err) => {
+function readJSON(src, callback){
+  fs.readFile(src, 'utf8', (err, data) => {
     if(err) throw err;
-    return jsonString;
+    callback(data);
   });
-  callback;
 }
+
+
 
 module.exports = { readJSON };
