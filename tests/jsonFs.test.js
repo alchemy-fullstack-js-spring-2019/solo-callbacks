@@ -26,6 +26,9 @@ const sampleJSON = {
 
 
 describe('readJSON tests', () => {
+    afterEach(() => {
+        fs.unlink('json-string.txt', () => {});
+    });
     it('better work', done => {
         const stringified = JSON.stringify(sampleJSON);
         fs.writeFile('json-string.txt', stringified, err => {
