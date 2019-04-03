@@ -9,17 +9,15 @@ afterEach(() => {
 
 describe('copy', () => {
   it('test copy function', done => {
-    copy('./writing.txt', './new_writing.txt', () => {
-      expect(fs.readFile('./writing.txt', 'utf8', (err, data) => {
-        if(err) throw err;
-        return data;
-      }))
-        .toBe(fs.readFile('./new_writing.txt', 'utf8', (err, data) => {
-          if(err) throw err;
-          return data;
-        }));
-      done();
+    copy('./writing.txt', './new_writing.txt', err => {
+      expect(err).toBeFalsy();
+      fs.readFile('./writing.txt', { encoding: 'utf8' }, (err, original) => {
+        fs.readFile('./new_writing.txt', { encoding: 'utf8' }, (err, copied) => {
+          expect(original).toEqual(copied);
+        });
+      });
     });
+    done();
   });
 });
 
