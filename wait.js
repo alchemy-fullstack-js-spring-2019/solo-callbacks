@@ -4,7 +4,7 @@
 // }, 1000);
 
 function wait(delay, callback) {
-  setTimeout(callback, 1000);
+  setTimeout(callback, delay);
 }
 
-module.exports = { wait }
+module.exports = { wait };
