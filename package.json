@@ -1,0 +1,27 @@
+{
+  "name": "solo-callbacks",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest --verbose",
+    "test:watch": "npm run test -- --watch",
+    "start": "node lib/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Masmics/solo-callbacks.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Masmics/solo-callbacks/issues"
+  },
+  "homepage": "https://github.com/Masmics/solo-callbacks#readme",
+  "devDependencies": {
+    "eslint": "^5.16.0",
+    "fs": "0.0.1-security",
+    "jest": "^24.6.0"
+  }
+}
