@@ -34,12 +34,12 @@ Read a file and print out its content.
 
 Copy a file by using `readFile` and passing its contents to `writeFile`.
 
-* create a `copyFile.js` file
-* require [fs](https://nodejs.org/api/fs.html)
-* use `fs.readFile` to read the contents of LAB.md
-* using the contents from `fs.readFile` use `fs.writeFile`
-  to write LAB-copy.md
-* run your script with `node copyFile.js`
+<!-- * create a `copyFile.js` file -->
+<!-- * require [fs](https://nodejs.org/api/fs.html) -->
+<!-- * use `fs.readFile` to read the contents of LAB.md -->
+<!-- * using the contents from `fs.readFile` use `fs.writeFile` -->
+  <!-- to write LAB-copy.md -->
+<!-- * run your script with `node copyFile.js` -->
 
 ## Copy file function
 
@@ -51,7 +51,7 @@ Extract the copy logic into a reusable and testable function.
   * src is the path to an existing file
   * dst is the path to put the copied file
   * write a failing test
-    * call copy with a known src and dst
+    <!-- * call copy with a known src and dst -->
     * use `fs.readFile` to check that dst now contains file
     * `afterEach` use `fs.unlink` to delete the file created during testing
   * implement the `copy` function
