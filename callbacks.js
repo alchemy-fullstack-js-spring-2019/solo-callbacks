@@ -1,12 +1,12 @@
 setTimeout(() => {
-  console.log('OHHH, calbacks?');
+  return ('OHHH, calbacks?');
 }, 2000);
   
 setTimeout(() => {
-  console.log('OHHH, calbacks?');
+  return ('OHHH, calbacks?');
 }, 1000);
   
 setInterval(() => {
-  console.log('call back call back');
+  return ('call back call back');
 }, 1000);
 

@@ -5,8 +5,8 @@
   "main": "callbacks.js",
   "scripts": {
     "test": "jest --verbose",
-    "test:watch": "run test -- --watch",
-    "start": "wait.test.js"
+    "test:watch": "npm run test -- --watch",
+    "start": "./wait.test.js"
   },
   "repository": {
     "type": "git",
