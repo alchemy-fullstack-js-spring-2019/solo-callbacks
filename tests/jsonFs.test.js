@@ -1,4 +1,5 @@
 const readJSON = require('../lib/jsonFs');
+const writeJSON = require('../lib/jsonFs');
 const fs = require('fs');
 
 describe('read json function', () => {
