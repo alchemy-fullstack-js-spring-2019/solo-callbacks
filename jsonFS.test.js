@@ -2,22 +2,23 @@ const fs = require('fs');
 
 const { readJSON } = require('./jsonFS');
 
-describe('readJSON', () => {
-  it('turns JSON into a string', () => {
-    const testString = {
-      test: 'string to be strung'      
+describe('jsonFS', () => {
+  afterEach(done => {
+    fs.unlink('./jsonfile.txt', done);
+  });
+
+  it('can read a json file', done => {
+    const pet = {
+      name: 'stitch',
+      breed: 'mutt'     
     };
 
-    const json = JSON.stringify(testString);
-    fs.writeFile('jsonfile.txt', json, err => {
-      if(err) throw err;
-      // console.log('done');
+    fs.writeFile('./jsonfile.txt', JSON.stringify(pet), () => {
       readJSON('./jsonfile.txt', (err, data) => {
-        expect(data).toEqual(json);
+        expect(err).toBeFalsy();
+        expect(data).toEqual(pet);
+        done();
       });
     });
-
-
-    // invoke the readJSON function and expect the written json
   });
 });
