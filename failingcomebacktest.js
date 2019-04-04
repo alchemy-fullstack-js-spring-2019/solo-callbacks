@@ -9,7 +9,7 @@ describe('COPY.JS**', () => {
     afterEach(done => {
         fs.unlink('./writing.txt', (err) => {
             done(err);
-        })
+        });
     });
 
     it('check destination contains stuff from src', done => {
@@ -24,7 +24,7 @@ describe('COPY.JS**', () => {
         });
     
         
-    })
+    });
 
     it('read a file from existing path and copy it to another location, throw error when path is wrong', done => {
         const readFrom = './1_callbacks.m';
@@ -34,7 +34,7 @@ describe('COPY.JS**', () => {
             done();
         });
 
-    })
-})
+    });
+});
 
 

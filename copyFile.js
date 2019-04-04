@@ -1,20 +1,20 @@
 const fs = require('fs');
 
 
-fs.readFile('./1_callbacks.md','utf8', (err, data) => {
+fs.readFile('./1_callbacks.md', 'utf8', (err, data) => {
     if(err){
-        throw err
+        throw err;
     }
-    const copiedStuff = data
+    const copiedStuff = data;
     fs.writeFile('./writing.txt', copiedStuff, (err, data) =>{
         if(err){
-            throw err
+            throw err;
         }
     
-    })
+    });
 
     
-})
+});
 
 
 
