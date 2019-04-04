@@ -8,22 +8,30 @@ describe('read json function', () => {
             age: 10
         };
         fs.writeFile('./myJSON', JSON.stringify(dog), () => {
+            const dog = {
+                name: 'spot',
+                age: 10
+            };
             readJSON('./myJSON', (err, data) => {
                 expect(err).toBeFalsy();
                 expect(data).toEqual(dog);
                 done();
             })
         });
-            
-    //write file
-    //set up your object again
-    //similar but use writeFile
-    //save it to myJSON
-    
-    //callback - err
-    //readJSON inside writeFile
-    //expect data to equal dog
-    //done
+    });
+    it('writes to a new json file', done => {
+        const dog = {
+            name: 'spot',
+            age: 10
+        };
+        writeJSON('./myJSON', dog, err => {
+            expect(err).toBeFalsy();
+
+            readJSON('./myJSON', (err, data) => {
+                expect(data).toEqual(dog);
+                done();
+            });
+        });
     });
 });
 
