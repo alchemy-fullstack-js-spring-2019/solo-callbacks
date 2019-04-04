@@ -3,7 +3,7 @@ const fs = require('fs');
 const {
   readJSON,
   writeJSON
-} = require('./jsonFs');
+} = require('../lib/jsonFs');
 
 describe('jsonFs', () => {
   afterEach(done => {
