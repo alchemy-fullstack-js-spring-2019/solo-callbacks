@@ -29,15 +29,17 @@ describe('jsonFs', () => {
         })
     })
     it('writeJSON(pathToFile, obj, callback)', done =>{
-        const pathToFile = './copiedJSON';
+        const writePath = './copiedJSON';
+        const readPath = './package.json';
         const obj = { title:'fruits'}
         const jsonString = JSON.stringify(obj);
-        writeJSON(pathToFile, jsonString, (err, data)=>{
+        writeJSON(writePath, jsonString, (err, data)=>{
             if(err){
                 console.log(err)
             }
-            const readObject = JSON.parse(data)
-            expect(readObject).toBe(object);
+            console.log('writejson callback data', data);        
+            const readObject = data;
+            expect(readObject).toBe(jsonString);
             done();
         })
     })
