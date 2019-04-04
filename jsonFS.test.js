@@ -1,6 +1,6 @@
 const fs = require('fs');
 
-const { readJSON } = require('./jsonFS');
+const { readJSON, writeJSON } = require('./jsonFS');
 
 describe('jsonFS', () => {
   afterEach(done => {
@@ -12,7 +12,7 @@ describe('jsonFS', () => {
       name: 'stitch',
       breed: 'mutt'     
     };
-
+    
     fs.writeFile('./jsonfile.txt', JSON.stringify(pet), () => {
       readJSON('./jsonfile.txt', (err, data) => {
         expect(err).toBeFalsy();
@@ -21,4 +21,23 @@ describe('jsonFS', () => {
       });
     });
   });
+  
+  it('can write a json file', done => {
+    const pet = {
+      name: 'stitch',
+      breed: 'mutt'     
+    };
+    
+    writeJSON('./jsonfile.txt', pet, err => {
+      expect(err).toBeFalsy();
+
+      readJSON('./jsonfile.txt', (err, data) => {
+        expect(data).toEqual(pet);
+        done();
+      });
+    });
+  });
+
+
 });
+

@@ -9,4 +9,9 @@ function readJSON(path, callback) {
   });
 }
 
-module.exports = { readJSON };
+function writeJSON(path, data, callback) {
+  const strData = JSON.stringify(data);
+  fs.writeFile(path, strData, callback);
+}
+
+module.exports = { readJSON, writeJSON };
