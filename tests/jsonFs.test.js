@@ -27,6 +27,7 @@ describe('json function', () => {
             name: 'spot',
             age: 10
         };
+        
         writeJSON('./myJSON', dog, err => {
             expect(err).toBeFalsy();
 
