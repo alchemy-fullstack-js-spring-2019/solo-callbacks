@@ -1,22 +1,21 @@
 const fs = require('fs');
 
-function copyToLocation(readFrom, destination, callBack){
-    fs.readFile(readFrom, 'utf8', (err, data) => {
+function copy(src, dst, callback){
+    fs.readFile(src, 'utf8', (err, data)=>{
         if(err){
-            return callBack(err);
-            // throw err
+            console.log(err);
         }
-        const stuffToWrite = data;
-        fs.writeFile(destination, stuffToWrite, (err) =>{
+        const sourceData = data;
+        fs.writeFile(dst, sourceData, (err)=>{
             if(err){
-                return callBack(err);
-                //throw err
-            }       
+                console.log(err);
+            }
+            fs.readFile(src, 'utf8', callback);
         });
     });
+
 }
-module.exports = copyToLocation;
 
 
 
-
+module.exports = copy;
