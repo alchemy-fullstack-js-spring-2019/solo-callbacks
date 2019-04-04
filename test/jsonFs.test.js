@@ -15,8 +15,12 @@ describe('reads string from json', () => {
   });
   it('writes a json file from an object', done => {
     const object = { key: 'value', key2: 'value2' };
-    writeJSON('./test.json', object, (err, data) => {
-      
+    writeJSON('./test.json', object, (err, writeData) => {
+      expect(err).toBeFalsy();
+      readJSON('./test.json', (err, readData) => {
+        expect(writeData).toEqual(readData);
+        done();
+      });
     });
   });
 });
