@@ -21,8 +21,9 @@ describe('readJson function', () => {
 
         writeJson('./crazy.json', jsonData, err => {
             expect(err).toBeFalsy();
-
+            
             readJson('./crazy.json', (err, data) => {
+                expect(err).toBeFalsy();
                 expect(data).toEqual(jsonData);
                 done();
             });
