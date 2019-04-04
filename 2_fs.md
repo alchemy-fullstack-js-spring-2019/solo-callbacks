@@ -11,7 +11,7 @@ Read a file and print out its content.
 * create a `readFile.js` file
 * require [fs](https://nodejs.org/api/fs.html)
   * i.e. `const fs = require('fs');`
-* use `fs.readFile` to read the contents of LAB.md
+* use `fs.readFile` to read the contents of 1_callbacks.md
   * `fs.readFile('./LAB.md', (err, data) => {})`
 * print LAB.md to the console
   * `console.log(data)`
