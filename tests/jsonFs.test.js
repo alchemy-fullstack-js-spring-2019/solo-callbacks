@@ -2,6 +2,9 @@ const { readJSON, writeJSON } = require('../lib/jsonFs');
 const fs = require('fs');
 
 describe('json function', () => {
+    afterEach(done => {
+        fs.unlink('./myJSON', done);
+    })
     it('reads the json file', done => {
         const dog = {
             name: 'spot',
