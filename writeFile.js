@@ -1,6 +1,6 @@
-const fs = require('fs');   // can do const { writeFile } = require('fs') and then remove fs from start of line 3
+const fs = require('fs');
 
-fs.writeFile('writing.txt', 'test write test write', err => {  //path, text, error
+fs.writeFile('writing.txt', 'test write test write', err => {
   if(err) throw err;
   console.log('done');
 });

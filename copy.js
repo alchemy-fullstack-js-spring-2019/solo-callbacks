@@ -1,6 +1,5 @@
 const fs = require('fs');
 
-
 function copy(src, dst, callback) {
 
   fs.readFile(src, 'utf8', (err, data) => {
