@@ -6,11 +6,9 @@ function readJSON(src, callback) {
     const json = JSON.parse(data);
     callback(null, json);
   });
-  console.log('I am a jsonFs read function');
 }
 
 function writeJSON(src, data, callback) {
-  //console.log('I am a jsonFs write function');
   const strData = JSON.stringify(data);
   fs.writeFile(src, strData, callback);
 }
