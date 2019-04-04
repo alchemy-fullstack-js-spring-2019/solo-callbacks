@@ -8,19 +8,18 @@ describe('jsonFs', () => {
         const pathToFile = './package.json';
         readJSON(pathToFile, (err, data) => {
             if(err) {
-                console.log(err);
+                throw err;
             }
             const jsonData = data;
             const jsonObject = JSON.parse(jsonData);
             const jsonString = JSON.stringify(jsonObject);
            
             fs.writeFile('./copiedJSON', jsonString, (err) => {
-                if(err) {
-                    console.log(err);
-                }
+                expect(err).toBe(null);
+        
                 readJSON('./copiedJSON', (err, data) => {
                     if(err) {
-                        console.log(err);
+                        throw err;
                     }
                     expect(data).toBe(jsonString);
                     done();
