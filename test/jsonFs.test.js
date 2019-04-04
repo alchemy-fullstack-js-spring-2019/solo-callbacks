@@ -32,7 +32,7 @@ describe('read JSON function', () => {
 
     writeJSON('./myJSON', dog, err => {
       expect(err).toBeFalsy();
-      readJSON('./myJSON', (err, data) => {
+      readJSON('../myJSON', (err, data) => {
         expect(data).toEqual(dog);
         done();
       });
