@@ -6,12 +6,9 @@ function readJSON(pathToFile, callback){
 
 function writeJSON(pathToFile, obj, callback){
     fs.writeFile(pathToFile, obj, ()=>{
-        readJSON(pathToFile, callback)
+        readJSON('./copiedJSON', callback)
     })   
 }
-
-
-
 module.exports = {
     readJSON,
     writeJSON

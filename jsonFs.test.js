@@ -29,7 +29,7 @@ describe('jsonFs', () => {
         })
     })
     it('writeJSON(pathToFile, obj, callback)', done =>{
-        const pathToFile = './package.json';
+        const pathToFile = './copiedJSON';
         const obj = { title:'fruits'}
         const jsonString = JSON.stringify(obj);
         writeJSON(pathToFile, jsonString, (err, data)=>{
