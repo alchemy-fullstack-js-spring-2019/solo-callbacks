@@ -2,7 +2,7 @@ const fs = require('fs');
 const { 
   readJSON,
   writeJSON
-} = require('../lib/writeFile');
+} = require('../lib/jsonFS');
 
 describe('jsonFs', () => {
   // afterEach(done => {
@@ -14,8 +14,8 @@ describe('jsonFs', () => {
       name: 'bro',
       age: 15
     };
-    fs.writeFile('./lib/jsonFS', JSON.stringify(guy), () => {
-      readJSON('./lib/jsonFS', (err, data) => {
+    fs.writeFile('myJSON.txt', JSON.stringify(guy), () => {
+      readJSON('myJSON.txt', (err, data) => {
         expect(err).toBeFalsy();
         expect(data).toEqual(guy);
         done();
@@ -28,10 +28,10 @@ describe('jsonFs', () => {
       name: 'bro',
       age: 15
     };
-    writeJSON('../lib/jsonFS', guy, err => {
+    writeJSON('myJSON.txt', guy, err => {
       expect(err).toBeFalsy();
 
-      readJSON('../lib/jsonFS', (err, data) => {
+      readJSON('myJSON.txt', (err, data) => {
         expect(data).toEqual(guy);
         done();
       });
