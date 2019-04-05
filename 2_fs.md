@@ -62,7 +62,7 @@ Extract the copy logic into a reusable and testable function.
 ## Write json to file
 
 * create a `jsonFs.js` and `jsonFs.test.js` file
-  * write a `readJSON(pathToFile, callback)` function
+  <!-- * write a `readJSON(pathToFile, callback)` function
     * Write a failing test
       * use `JSON.stringify` to turn JSON into a string
       * Use `fs.writeFile` to write JSON string to a file.
@@ -70,7 +70,7 @@ Extract the copy logic into a reusable and testable function.
     * implement `readJSON`
       * use `fs.readFile` to read a file
       * use `JSON.parse` to parse JSON
-      * invoke the callback function with the parsed JSON
+      * invoke the callback function with the parsed JSON -->
   * write a `writeJSON(pathToFile, obj, callback)` function
     * Write a failing test
       * invoke the `writeJSON` function to create a new file
