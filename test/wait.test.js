@@ -5,6 +5,5 @@ describe('wait function', ()=> {
         wait(2000, () => {
             done();
         });
-        //or can do wait(1000, done);
     });
 });
