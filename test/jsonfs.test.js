@@ -2,12 +2,13 @@ const fs = require('fs');
 const { readJSON } = require('../lib/jsonfs');
 
 describe('json', () => {
-
-
+  
   it('writes and reads JSON', done => {
-    const json = JSON.stringify({ name: 'Timmothy', age: 23 });
-    fs.writeFile('./json.txt', json, 'utf8', () => {
-      readJSON('./json.txt', data => {
+    const jsonObj = { name: 'Timmothy', age: 23 };
+    const json = JSON.stringify(jsonObj);
+    fs.writeFile('./json', JSON.stringify(jsonObj), () => {
+      readJSON('./json', (err, data) => {
+        expect(err).toBeFalsy();
         expect(data).toEqual(json);
         done();
       });
