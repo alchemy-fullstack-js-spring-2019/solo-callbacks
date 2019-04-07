@@ -1,21 +1,18 @@
 const fs = require('fs');
-const {
-  readJSON,
-  writeJSON
-} = require('./lib/jsonFS.js');
+const { readJSON, writeJSON } = require('../lib/jsonFS.js');
 
 describe('jsonFS', () => {
   afterEach(done => {
-    fs.unlink('./myJSON', done);
+    fs.unlink('./jsonfile.txt', done);
   });
 
-  it('can read a json file', () => {
+  it('can read a json file', done => {
     const dog = {
       name: 'spot',
       age: 15
     };
-    fs.writeFile('./myJSON', JSON.stringify(dog), () => {
-      readJSON('./myJSON', (err, data) => {
+    fs.writeFile('./jsonfile.txt', JSON.stringify(dog), () => {
+      readJSON('./jsonfile.txt', (err, data) => {
         expect(err).toBeFalsy();
         expect(data).toEqual(dog);
         done();
@@ -29,10 +26,10 @@ describe('jsonFS', () => {
       age: 15
     };
 
-    writeJSON('./myJSON', dog, err => {
+    writeJSON('./jsonfile.txt', dog, err => {
       expect(err).toBeFalsy();
 
-      readJSON('./myJSON', (err, data) => {
+      readJSON('./jsonfile.txt', (err, data) => {
         expect(data).toEqual(dog);
         done();
       });
