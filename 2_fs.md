@@ -2,7 +2,7 @@
 
 The [fs](https://nodejs.org/api/fs.html) module provides functions
 to interact with the file system. It is a built in module
-(you **DON'T** need to install it).
+(you **DON'T** need to install it)
 
 ## Read from a file
 
