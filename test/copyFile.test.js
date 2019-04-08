@@ -1,19 +1,20 @@
-const copyFile = require('../lib/copyFileFn.js');
+const { copyFile } = require('../lib/copyFileFn.js');
+const fs = require('fs');
 
-describe('copy function', () => {
-  it('invoke the copy function to copy a file', done => {
-    let copy = null;
-    const copiedFile = copyFile('./1_callbacks.md', './1_callbacksCopy.md');
+describe('copyFile function tests', ()=> {
+  afterEach(done=> {
+    fs.unlink('./1_callbacksCopy.md', done);
+  });
 
-    const fs = require('fs');
-    fs.readFile('./1_callbacks.md', { encoding: 'utf8' }, (err, data) => {
-      if(err) throw err;
-      copy = data;
+  it('will copyFile the contents of a file', done => {
+    copyFile('./1_callbacks.md', './1_callbacksCopy.md', err => {
+      expect(err).toBeUndefined();
+      fs.readFile('./1_callbacks.md', 'utf8', (err, original => {
+        fs.readFile('./1_callbacksCopy.md', 'utf8', (err, copiedFile => {
+          expect(original).toEqual(copiedFile);
+          done();
+        }));
+      }));
     });
-    
-    console.log(copiedFile);
-    console.log(copy);
-    expect(copiedFile).toEqual(copy);
-    done();
   });
 });
