@@ -17,43 +17,43 @@ Read a file and print out its content.
   * `console.log(data)`
 * run your script with `node readFile.js`
 * [specify encoding](https://nodejs.org/api/fs.html#fs_fs_readfile_path_options_callback)
-  * if you don't specify an encoding `readFile` will pass
+  <!-- * if you don't specify an encoding `readFile` will pass
     your callback the raw bytes of the file
-  * the encoding should be `utf8` (Unicode)
+  * the encoding should be `utf8` (Unicode) -->
 
 ## Write a new file
 
 Write a string into a new file.
 
-* create a `writeFile.js` file
-* require [fs](https://nodejs.org/api/fs.html)
-* use `fs.writeFile` to write "I am writing!!!" to writing.txt
-* run your script with `node writeFile.js`
+* create a `writeFile.js` file -->
+* require [fs](https://nodejs.org/api/fs.html) -->
+<!-- * use `fs.writeFile` to write "I am writing!!!" to writing.txt
+<!-- * run your script with `node writeFile.js`
 
 ## Copy a file
 
 Copy a file by using `readFile` and passing its contents to `writeFile`.
 
-* create a `copyFile.js` file
-* require [fs](https://nodejs.org/api/fs.html)
+* create a `copyFile.js` file -->
+* require [fs](https://nodejs.org/api/fs.html) -->
 * use `fs.readFile` to read the contents of LAB.md
 * using the contents from `fs.readFile` use `fs.writeFile`
-  to write LAB-copy.md
-* run your script with `node copyFile.js`
+  <!-- to write LAB-copy.md
+<!-- * run your script with `node copyFile.js`
 
 ## Copy file function
 
 Extract the copy logic into a reusable and testable function.
 
-* create a `copy.test.js` and `copy.js` file
+<!-- <!-- * create a `copy.test.js` and `copy.js` file -->
 * write a `copy(src, dst, callback)`
-  function
-  * src is the path to an existing file
+  function -->
+  <!-- * src is the path to an existing file
   * dst is the path to put the copied file
-  * write a failing test
-    * call copy with a known src and dst
+  * write a failing test -->
+    <!-- * call copy with a known src and dst
     * use `fs.readFile` to check that dst now contains file
-    * `afterEach` use `fs.unlink` to delete the file created during testing
+    <!-- * `afterEach` use `fs.unlink` to delete the file created during testing --> -->
   * implement the `copy` function
 * BONUS: write a
   `copyDir(src, dst, callback)` function
