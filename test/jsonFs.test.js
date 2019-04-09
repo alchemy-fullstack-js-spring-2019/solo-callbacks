@@ -4,36 +4,37 @@ const {
   writeJSON
 } = require('../lib/jsonFs');
 
-describe('read JSON function', () => {
+describe('SON function', () => {
   afterEach(done => {
-    fs.unlink('./myJSON', done);
+    fs.unlink('./myJSON.txt', done);
   });
 
   it('reads JSON file', done => {
-    const dog = {
+    const dogJson = {
       name: 'fido',
       age: 5
     };
 
-    fs.writeFile('./myJSON', JSON.stringify(dog), () => {
-      readJSON('./myJSON', (err, data) => {
+    fs.writeFile('./myJSON.txt', JSON.stringify(dogJson), () => {
+      readJSON('./myJSON.txt', (err, data) => {
         expect(err).toBeFalsy();
-        expect(data).toEqual(dog);
+        expect(data).toEqual(dogJson);
         done();
       });
     });
   });
 
   it('can write JSON file', () => {
-    const dog = {
+    const dogJson = {
       name: 'fido',
       age: 5
     };
 
-    writeJSON('./myJSON', dog, err => {
+    writeJSON('./myJSON.txt', dogJson, err => {
       expect(err).toBeFalsy();
-      readJSON('./myJSON', (err, data) => {
-        expect(data).toEqual(dog);
+
+      readJSON('./myJSON.txt', (err, data) => {
+        expect(data).toEqual(dogJson);
         done();
       });
     });
