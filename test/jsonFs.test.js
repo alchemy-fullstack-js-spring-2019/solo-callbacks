@@ -24,7 +24,7 @@ describe('JSON function', () => {
     });
   });
 
-  it('can write JSON file', () => {
+  it('can write JSON file', done => {
     const dogJson = {
       name: 'fido',
       age: 5
