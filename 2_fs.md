@@ -11,8 +11,8 @@ Read a file and print out its content.
 * create a `readFile.js` file
 * require [fs](https://nodejs.org/api/fs.html)
   * i.e. `const fs = require('fs');`
-* use `fs.readFile` to read the contents of LAB.md
-  * `fs.readFile('./LAB.md', (err, data) => {})`
+* use `fs.readFile` to read the contents of 1_callbacks.md
+  * `fs.readFile('./1_callbacks.md', (err, data) => {})`
 * print LAB.md to the console
   * `console.log(data)`
 * run your script with `node readFile.js`
@@ -36,7 +36,7 @@ Copy a file by using `readFile` and passing its contents to `writeFile`.
 
 * create a `copyFile.js` file
 * require [fs](https://nodejs.org/api/fs.html)
-* use `fs.readFile` to read the contents of LAB.md
+* use `fs.readFile` to read the contents of 1_callbacks.md
 * using the contents from `fs.readFile` use `fs.writeFile`
   to write LAB-copy.md
 * run your script with `node copyFile.js`
