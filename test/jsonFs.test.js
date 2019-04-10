@@ -4,7 +4,7 @@ const {
   writeJSON
 } = require('../lib/jsonFs');
 
-describe('SON function', () => {
+describe('JSON function', () => {
   afterEach(done => {
     fs.unlink('./myJSON.txt', done);
   });

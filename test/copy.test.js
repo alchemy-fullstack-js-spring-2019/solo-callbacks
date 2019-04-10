@@ -1,5 +1,5 @@
-const copy = require('../lib/copy');
 const fs = require('fs');
+const copy = require('../lib/copy');
 
 describe('copy function', () => {
   afterEach(done => {
@@ -8,7 +8,7 @@ describe('copy function', () => {
 
   it('can copy a file', done => {
     copy('./1_callbacks.md', './1_callbacks-copy.md', err => {
-      expect(err).toBeFalsy();
+      expect(err).toBeUndefined();
       fs.readFile('./1_callbacks.md', { encoding: 'utf8' }, (err, original) => {
         fs.readFile('./1_callbacks-copy.md', { encoding: 'utf8' }, (err, copiedFile) => {
           expect(original).toEqual(copiedFile);
