@@ -20,11 +20,3 @@ describe('json functions', () => {
 
 });
 
-// describe('write json to file', () => {
-//   it('stringify json', () => {
-//     fs.readFile('../package.json', { encoding: 'utf8' }, (err, data) => {
-//       data.toString(data);
-//     });
-
-//   });
-// });
